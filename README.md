@@ -24,6 +24,36 @@ This project ensures your GitHub contributions never stop. It updates your <code
 
 ---
 
+## Sequence Diagram(s)
+```mermaid
+sequenceDiagram
+  autonumber
+  actor User as User
+  participant GH as GitHub Scheduler/Dispatch
+  participant WF as Actions Runner
+  participant SH as "Update README" Step
+  participant G as Git (local)
+  participant R as origin/main
+
+  GH->>WF: Trigger workflow (cron / manual)
+  WF->>G: checkout repo
+  WF->>G: configure author (name/email)
+  WF->>SH: run "Update README"
+  rect rgb(238,245,255)
+    note right of SH: Build TIMESTAMP, pick COMMIT_MSG and RANDOM_QUOTE
+    SH->>SH: Ensure README has table header
+    SH->>SH: Count rows and append new table row
+  end
+  SH->>G: git add README.md
+  alt README changed
+    SH->>G: git commit -m COMMIT_MSG
+    WF->>G: git pull --rebase origin main
+    WF->>R: git push origin HEAD:main
+  else No changes
+    SH->>WF: Skip commit/push
+  end
+```
+
 ## <p align="center">🔥 <strong>Key Features</strong> 🔥</p>
 - ✅ **Fully Automated** – No manual commits needed.
 - ✅ **Random Quotes + Emojis** – Looks natural, fun & engaging.
