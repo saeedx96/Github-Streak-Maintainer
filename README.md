@@ -101,7 +101,7 @@ v2.0 → Pro Design + Commit History Table + Stylish UI.
 
 ![Streak](https://img.shields.io/badge/Streak-Active-brightgreen)
 
-![GitHub Streak](https://streak-stats.demolab.com/?user=saeedx302&theme=radical)
+![GitHub Streak](https://streak-stats.demolab.com/?user=saeedx96&theme=radical)
 
 </div>
 
