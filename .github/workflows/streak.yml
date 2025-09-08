@@ -17,8 +17,8 @@ jobs:
 
       - name: Configure Git  
         run: |
-          git config --local user.email "154684931+nisarx302@users.noreply.github.com"
-          git config --local user.name "nisarx302"
+          git config --local user.email "228329407+saeedx96@users.noreply.github.com"
+          git config --local user.name "saeedx96"
 
       - name: Update README  
         run: |
